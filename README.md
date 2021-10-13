@@ -9,14 +9,14 @@
 
 #### 使用教程
 通过PHImageManager从PHAsset获取图片即可
-```func imageFromAsset( _ asset: PHAsset, _ size: CGSize = CGSize.init(width: 500, height: 500), result:@escaping (UIImage?)->Void){
+`func imageFromAsset( _ asset: PHAsset, _ size: CGSize = CGSize.init(width: 500, height: 500), result:@escaping (UIImage?)->Void){
     let manager = PHImageManager.default()
     let options = PHImageRequestOptions.init()
     manager.requestImage(for: asset, targetSize: size, contentMode: PHImageContentMode.aspectFit, options: options) { image, info in
         
         result(image)
     }
-}```
+}`
 currentSelectedImageAssets：当前已经选中的PHAsset，数组类型为[(PHAsset, String)] 里面是元组放PHAsset和当前这个资源选中的排序数字，使用的时候用这样的数组数据就可以了，拿到数组后只要用到PHAsset，其他的可以不用管
 maxImageCount： 最多可以选择几张
 
